@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
                 message:requestData.data.message
             }
         })
-        return NextResponse.json(server)
+        return NextResponse.json(server,{status:200})
         
         
         
@@ -26,6 +26,6 @@ export async function POST(req: NextRequest) {
         
         console.error("Error handling POST request:", error);
         
-        return NextResponse.error();
+        return NextResponse.json({status:500})
     }
 }
